@@ -1,6 +1,6 @@
 package com.eltonkaqiu.resbackend.exceptions;
 
-public class EntityFoundException extends RuntimeException {
+public class EntityFoundException extends ApiRuntimeException {
     public EntityFoundException() {
     }
 

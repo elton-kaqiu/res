@@ -11,9 +11,11 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RoleDto {
-    private Integer id;
-    private String name;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+public class ErrorMessage {
+    private int status;
+    private LocalDateTime timestamp = LocalDateTime.now();
+    private String message;
+    private String url;
+
 }
+
