@@ -59,6 +59,7 @@ public class UserServiceImpl implements UserService {
                 .findAll()
                 .stream()
                 .map(user -> UserDto.builder()
+                        .id(user.getId())
                         .firstName(user.getFirstName())
                         .lastName(user.getLastName())
                         .phoneNumber(user.getPhoneNumber())

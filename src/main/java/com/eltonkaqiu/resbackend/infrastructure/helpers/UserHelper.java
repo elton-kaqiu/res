@@ -30,7 +30,6 @@ public class UserHelper {
                 () -> new EntityNotFoundException("Role " + role + " not found")
         );
         User user = User.builder()
-                .id(0)
                 .firstName(req.getFirstName())
                 .lastName(req.getLastName())
                 .phoneNumber(req.getPhoneNumber())
@@ -38,9 +37,12 @@ public class UserHelper {
                 .email(req.getEmail())
                 .password(passwordEncoder.encode(req.getPassword()))
                 .build();
-        log.debug("User created with id {}", user.getId());
-        return userRepository.save(user);
+        log.debug("User before saving: {}", user);
+        User savedUser = userRepository.save(user);
+        log.debug("User saved with id {}", savedUser.getId());
+        return savedUser;
     }
+
 
     public AuthenticationResponse authenticationResponse(User user) {
         String jwtToken = jwtService.generateToken(user);
