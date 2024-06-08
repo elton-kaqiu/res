@@ -1,8 +1,8 @@
 package com.eltonkaqiu.resbackend.services.impls;
 
 import com.eltonkaqiu.resbackend.dtos.RoleDto;
-import com.eltonkaqiu.resbackend.exceptions.EntityFoundException;
-import com.eltonkaqiu.resbackend.exceptions.EntityNotFoundException;
+import com.eltonkaqiu.resbackend.infrastructure.exceptions.EntityFoundException;
+import com.eltonkaqiu.resbackend.infrastructure.exceptions.EntityNotFoundException;
 import com.eltonkaqiu.resbackend.mappers.RoleMapper;
 import com.eltonkaqiu.resbackend.models.Role;
 import com.eltonkaqiu.resbackend.repositories.RoleRepository;

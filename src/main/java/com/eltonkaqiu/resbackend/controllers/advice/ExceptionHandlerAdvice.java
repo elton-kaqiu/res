@@ -1,10 +1,10 @@
 package com.eltonkaqiu.resbackend.controllers.advice;
 
 import com.eltonkaqiu.resbackend.dtos.ErrorMessage;
-import com.eltonkaqiu.resbackend.exceptions.EntityFoundException;
-import com.eltonkaqiu.resbackend.exceptions.EntityNoContentException;
-import com.eltonkaqiu.resbackend.exceptions.EntityNotFoundException;
-import com.eltonkaqiu.resbackend.exceptions.NotAuthorizedException;
+import com.eltonkaqiu.resbackend.infrastructure.exceptions.EntityFoundException;
+import com.eltonkaqiu.resbackend.infrastructure.exceptions.EntityNoContentException;
+import com.eltonkaqiu.resbackend.infrastructure.exceptions.EntityNotFoundException;
+import com.eltonkaqiu.resbackend.infrastructure.exceptions.NotAuthorizedException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

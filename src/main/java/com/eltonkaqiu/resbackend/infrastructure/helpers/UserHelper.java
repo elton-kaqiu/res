@@ -1,8 +1,8 @@
-package com.eltonkaqiu.resbackend.helpers;
+package com.eltonkaqiu.resbackend.infrastructure.helpers;
 
 import com.eltonkaqiu.resbackend.dtos.AuthenticationResponse;
 import com.eltonkaqiu.resbackend.dtos.RegisterRequest;
-import com.eltonkaqiu.resbackend.exceptions.EntityNotFoundException;
+import com.eltonkaqiu.resbackend.infrastructure.exceptions.EntityNotFoundException;
 import com.eltonkaqiu.resbackend.models.Role;
 import com.eltonkaqiu.resbackend.models.User;
 import com.eltonkaqiu.resbackend.repositories.RoleRepository;
