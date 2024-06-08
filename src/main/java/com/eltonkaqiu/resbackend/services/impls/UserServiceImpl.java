@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
         User existingUser = userRepository.findByEmail(newUser.getEmail()).orElseThrow(
                 () -> new EntityNotFoundException(String.format("User with email: %s not found", newUser.getEmail()))
         );
-        updateUserDetails(existingUser, newUser, id);
+        userHelper.updateUserDetails(existingUser, newUser, id);
         var updatedUser = userRepository.save(existingUser);
         return userMapper.toDto(updatedUser);
     }
@@ -74,15 +74,4 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
-    private void updateUserDetails(User existingUser, User newUser, Integer id) {
-        existingUser.setId(id);
-        existingUser.setFirstName(newUser.getFirstName());
-        existingUser.setLastName(newUser.getLastName());
-        existingUser.setRole(newUser.getRole());
-        existingUser.setEmail(newUser.getEmail());
-        existingUser.setPassword(newUser.getPassword());
-        existingUser.setCreatedAt(existingUser.getCreatedAt());
-        existingUser.setUpdatedAt(LocalDateTime.now());
-
-    }
 }
