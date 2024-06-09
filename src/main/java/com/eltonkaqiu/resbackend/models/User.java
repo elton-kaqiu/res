@@ -68,6 +68,9 @@ public class User implements UserDetails {
         this.updatedAt = now;
     }
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Review> reviews;
+
     @PreUpdate
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();

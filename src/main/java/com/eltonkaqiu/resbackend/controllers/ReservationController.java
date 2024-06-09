@@ -16,7 +16,7 @@ import java.util.List;
 public class ReservationController {
     private final ReservationService reservationService;
 
-/*    @PostMapping("/")
+    @PostMapping("/")
     public ResponseEntity<ReservationDto> createReservation(@RequestBody Reservation reservation) {
         return ResponseEntity.status(HttpStatus.CREATED).body(reservationService.addReservation(reservation));
     }
@@ -31,7 +31,7 @@ public class ReservationController {
         return ResponseEntity.ok(reservationService.getReservationById(id));
     }
 
-    @PutMapping("/{id}/")
+    @PutMapping("/{id}")
     public ResponseEntity<ReservationDto> updateReservation(@RequestBody Reservation newReservation, @PathVariable Integer id) {
         return ResponseEntity.ok(reservationService.updateReservation(newReservation, id));
     }
@@ -40,6 +40,6 @@ public class ReservationController {
     public ResponseEntity<Void> deleteReservation(@PathVariable Integer id) {
         reservationService.deleteReservationById(id);
         return ResponseEntity.noContent().build();
-    }*/
+    }
 
 }
