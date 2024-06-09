@@ -46,7 +46,7 @@ public class User implements UserDetails {
     private String phoneNumber;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
     @Email(message = "Email should be in the format example@example.com")
@@ -77,6 +77,7 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.getName()));
     }
+
     @Override
     public String getUsername() {
         return email;

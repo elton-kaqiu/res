@@ -31,20 +31,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         User user = userRepository.findByEmail(req.getEmail())
                 .orElseThrow(() -> new EntityNotFoundException(
                         String.format("User with email: %s not found", req.getEmail())));
-
-        // Authenticate the user
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(req.getEmail(), req.getPassword())
             );
         } catch (NotAuthorizedException ex) {
-            // Handle authentication failure
             throw new NotAuthorizedException("Authentication failed");
         }
-        // Generate JWT token
         String jwtToken = jwtService.generateToken(user);
-
-        // Return authentication response
         return new AuthenticationResponse(jwtToken);
     }
 
