@@ -25,7 +25,7 @@ public class Role {
     @NotBlank(message = "Role name is mandatory!")
     @Size(max = 50, message = "Role name must be less than or equal to 50 characters and greater than 0!")
     @Column(nullable = false, unique = true)
-    private String name;
+        private String name;
 
     @Column(updatable = false)
     private LocalDateTime createdAt;

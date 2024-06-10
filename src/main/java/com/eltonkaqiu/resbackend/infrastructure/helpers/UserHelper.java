@@ -58,6 +58,5 @@ public class UserHelper {
         existingUser.setPassword(newUser.getPassword());
         existingUser.setCreatedAt(existingUser.getCreatedAt());
         existingUser.setUpdatedAt(LocalDateTime.now());
-
     }
 }

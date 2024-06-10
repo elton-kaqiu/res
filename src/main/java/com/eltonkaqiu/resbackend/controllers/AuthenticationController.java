@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
 
-    @PostMapping("/register/")
+    @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest req) {
         return ResponseEntity.ok(authenticationService.register(req));
     }
 
-    @PostMapping("/login/")
+    @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> login(@RequestBody AuthenticationRequest req) {
         return ResponseEntity.ok(authenticationService.authenticate(req));
     }

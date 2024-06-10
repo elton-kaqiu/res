@@ -26,7 +26,7 @@ public class ReviewServiceImpl implements ReviewService {
     public ReviewDto addReview(Review review) {
         Integer userId = review.getUser().getId();
         User existingUser = userRepository.findById(userId).orElseThrow(
-                () -> new EntityNotFoundException("User with id " + userId + " not found")
+                () -> new EntityNotFoundException("You can't make a review if you are not registered!")
         );
         review.setUser(existingUser);
         reviewRepository.save(review);
